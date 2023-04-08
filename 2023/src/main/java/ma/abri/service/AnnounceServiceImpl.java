@@ -3,6 +3,7 @@ package ma.abri.service;
 import ma.abri.dao.AnnounceRepository;
 import ma.abri.model.Announce;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -40,9 +41,11 @@ public class AnnounceServiceImpl implements AnnounceService {
         return announceList;
     }
 
-    @Override
-    public void updateAnnounce(Integer id) {
 
+
+    @Override
+    public void updateAnnounce(Announce announce) {
+        announceRepository.save(announce);
     }
 
 

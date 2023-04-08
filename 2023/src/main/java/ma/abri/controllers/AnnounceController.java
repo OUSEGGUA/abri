@@ -25,44 +25,34 @@ public class AnnounceController {
         announceServiceImpl.create(announce);
     }
 
-    @RequestMapping(value = "/getAllAnnounce", method = RequestMethod.GET)
+    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     @ResponseBody
-    public List<Announce> getAllAnnounce() {
+    public List<Announce> getAll() {
         List<Announce> announceList = new ArrayList<>();
         announceList.addAll(announceServiceImpl.getAllAnnounce());
         return announceList;
     }
-    @RequestMapping(value = "/getAnnounceById/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
     public List<Announce> getAnnounceById(@PathVariable(name = "id") Integer id) {
         List<Announce> announceListId = new ArrayList<>();
         announceListId.addAll(announceServiceImpl.getAnnounceById(id));
         return announceListId;
     }
-    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public String delete(@PathVariable(name = "id") Integer id) {
+    public void delete(@PathVariable(name = "id") Integer id) {
         announceServiceImpl.deleteAnnounce(id);
-        return "redirect:/announce";
     }
 
-
-
-    @RequestMapping(value = "update/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
-    public String update(@PathVariable(name = "id") Integer id) {
-        announceServiceImpl.updateAnnounce(id);
-
-        return "redirect:getAnnounceById/{id}";
-
+    public void update(Announce announce) {
+        announceServiceImpl.updateAnnounce(announce);
     }
 
 
 
-
-    /*
-     **************************************************************************************************
-     */
     public AnnounceService getAnnounceServiceImpl() {
         return announceServiceImpl;
     }

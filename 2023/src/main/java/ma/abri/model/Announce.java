@@ -15,15 +15,15 @@ public class Announce {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer id;
     @Column(name = "title")
     private String title;
     @Column(name = "description")
     private String description;
-//    @Column(name = "priceMin")
-//    private double priceMin;
-//    @Column(name = "priceMax")
-//    private double priceMax;
+    @Column(name = "minPrice")
+    private double minPrice;
+    @Column(name = "maxPrice")
+    private double maxPrice;
 //    @Column(name = "category")
 //    private Category category;
     @Column(name = "location")
