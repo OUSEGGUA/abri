@@ -3,7 +3,6 @@ package ma.abri.service;
 import ma.abri.dao.AnnounceRepository;
 import ma.abri.model.Announce;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -35,10 +34,8 @@ public class AnnounceServiceImpl implements AnnounceService {
     }
 
     @Override
-    public Collection<? extends Announce> getAnnounceById(Integer id) {
-        List<Announce> announceList = new ArrayList<>();
-        announceList.add(announceRepository.findById(id).get());
-        return announceList;
+    public Announce getAnnounceById(Integer id) {
+        return announceRepository.findById(id).get();
     }
 
 
@@ -48,10 +45,6 @@ public class AnnounceServiceImpl implements AnnounceService {
         announceRepository.save(announce);
     }
 
-
-    /*
-     **************************************************************************************************
-     */
     public AnnounceRepository getAnnounceRepository() {
         return announceRepository;
     }

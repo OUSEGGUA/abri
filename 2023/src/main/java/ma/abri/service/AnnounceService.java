@@ -12,7 +12,7 @@ public interface AnnounceService {
     void create(Announce announce);
     void deleteAnnounce(Integer id);
     Collection<? extends Announce> getAllAnnounce();
-    Collection<? extends Announce> getAnnounceById(Integer id);
+    Announce getAnnounceById(Integer id);
 
 
     void updateAnnounce(Announce announce);

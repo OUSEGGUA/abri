@@ -19,7 +19,7 @@ public class AnnounceController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public void createNewAnnounce(Announce announce) {
+    public void createNewAnnounce(@RequestBody Announce announce) {
         announceServiceImpl.create(announce);
     }
 
@@ -32,10 +32,8 @@ public class AnnounceController {
     }
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public List<Announce> getAnnounceById(@PathVariable(name = "id") Integer id) {
-        List<Announce> announceListId = new ArrayList<>();
-        announceListId.addAll(announceServiceImpl.getAnnounceById(id));
-        return announceListId;
+    public Announce getAnnounceById(@PathVariable(name = "id") Integer id) {
+        return announceServiceImpl.getAnnounceById(id);
     }
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
