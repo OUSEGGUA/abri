@@ -1,8 +1,9 @@
-package ma.abri.service;
+package ma.abri.service.Iservice;
 
 import ma.abri.dao.PropertyRepository;
 import ma.abri.model.Announce;
 import ma.abri.model.Property;
+import ma.abri.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

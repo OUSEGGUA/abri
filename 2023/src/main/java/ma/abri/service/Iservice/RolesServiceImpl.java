@@ -1,10 +1,11 @@
-package ma.abri.service;
+package ma.abri.service.Iservice;
 
 import ma.abri.model.Roles;
+import ma.abri.service.RolesService;
 
 import java.util.Collection;
 
-public class RolesServiceImpl implements RolesService{
+public class RolesServiceImpl implements RolesService {
     @Override
     public void create(Roles roles) {
 

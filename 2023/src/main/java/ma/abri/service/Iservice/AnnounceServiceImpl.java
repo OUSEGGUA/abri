@@ -1,7 +1,8 @@
-package ma.abri.service;
+package ma.abri.service.Iservice;
 
 import ma.abri.dao.AnnounceRepository;
 import ma.abri.model.Announce;
+import ma.abri.service.AnnounceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

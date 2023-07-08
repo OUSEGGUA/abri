@@ -7,9 +7,9 @@ import java.util.Collection;
 
 public interface AddressService {
 
-    void create(Address address);
+    Address create(Address address);
     void deleteAddress(Integer id);
-    Collection<? extends Address> getAllAddress();
+    Iterable<Address> getAllAddress();
     Address getAddressById(Integer id);
 
 

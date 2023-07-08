@@ -1,8 +1,12 @@
 package ma.abri.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.ToString;
 
 @Entity
+@ToString
+@Data
 @Table(name = "Adress")
 public class Address {
     @Id

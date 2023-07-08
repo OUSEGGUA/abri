@@ -12,4 +12,7 @@ public class Roles {
     private Integer id;
     @Column(name = "name")
     private String name;
+
+    @Column(name = "role")
+    private String role;
 }

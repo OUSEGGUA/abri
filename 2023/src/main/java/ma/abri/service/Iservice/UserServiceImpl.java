@@ -1,8 +1,12 @@
-package ma.abri.service;
+package ma.abri.service.Iservice;
 
+import jakarta.transaction.Transactional;
 import ma.abri.dao.UserRepository;
 import ma.abri.model.User;
+import ma.abri.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,7 +14,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Component
-public class UserServiceImpl implements UserService{
+@Transactional
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -52,5 +57,6 @@ public class UserServiceImpl implements UserService{
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
 
 }
