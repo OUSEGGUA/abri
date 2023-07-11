@@ -25,10 +25,10 @@ public class PropertyServiceImpl implements PropertyService {
         propertyRepository.deleteById(id);
     }
 
-   // @Override
-   // public Collection<? extends Announce> getAllProperty() {
-    //    return (List<Property>) propertyRepository.findAll();
-  //  }
+    @Override
+    public Collection<? extends Property> getAllProperty() {
+        return (List<Property>) propertyRepository.findAll();
+    }
 
     @Override
     public Property getPropertyById(Integer id) {

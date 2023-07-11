@@ -1,8 +1,6 @@
 package ma.abri.controllers;
 
-import ma.abri.model.Announce;
 import ma.abri.model.Property;
-import ma.abri.service.AnnounceService;
 import ma.abri.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,13 +22,15 @@ public class PropertyController {
         propertyServiceImpl.create(property);
     }
 
-//    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<Property> getAll() {
-//        List<Property> announceList = new ArrayList<>();
-//        announceList.addAll(propertyServiceImpl.getAllProperty());
-//        return announceList;
-//    }
+   @RequestMapping(value = "/findAll", method = RequestMethod.GET)
+   @ResponseBody
+    public List<Property> getAll() {
+        List<Property> propertyList = new ArrayList<>();
+       propertyList.addAll(propertyServiceImpl.getAllProperty());
+        return propertyList;
+    }
+
+
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Property getPropertyById(@PathVariable(name = "id") Integer id) {
